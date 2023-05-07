@@ -14,15 +14,16 @@ export default function Products() {
     const productRequest = async (API) => {
       let res = await fetch(API)
       let data = await res.json()
-      setProducts(data.data)
+      setProducts(data)
     }
 
     return (
       <>
         <h3>Estos son todos los productos</h3>
-        { products.length == 0 && <p>Cargando la chucha ...</p> }
-        {
-          products.map( (product, i) => {
+        {products.length == 0 && <p>Cargando la chucha ...</p>}
+        { <p>Total de Productos: {products.total} </p> }
+        
+        {products.data?.map( (product, i) => {
             return (
               <div key={product.name + i}>
                 <p>{product.name}</p>
