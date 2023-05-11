@@ -4,7 +4,7 @@ import NotFound from "./components/NotFound.jsx";
 import Categories from "./components/Categories.jsx";
 import Products from "./components/Products.jsx";
 import Users from "./components/Users.jsx";
-
+import UserDetail from "./components/UserDetail.jsx";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/users" element={< Users />} />
         <Route path="/products" element={<Products />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/user/:id" element={<UserDetail/>}/>
       </Routes>
 
     </div>
