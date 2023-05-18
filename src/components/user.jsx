@@ -1,11 +1,12 @@
 
+import '../style.css'
 export default function User(props) {
   return (
-    <>
-      <h3>{props.name} {props.lastname}</h3>
-      <p>{props.email}</p>
-      <img src={"http://localhost:3004/images/users/" + props.image} alt="Imagen de usuario" />
-      <p>Usuario creado: {props.created_at}</p>
-    </>
+    <div className='box user'>
+      <h3 className='title'>{props.name} {props.lastname}</h3>
+      <p className='title'>{props.email}</p>
+      <p className='title'>Usuario creado: {props.created_at}</p>
+      <img className='img' src={"http://localhost:3004/images/users/" + props.image} alt="Imagen de usuario" />
+    </div>
   );
 }

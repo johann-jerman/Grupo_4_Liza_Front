@@ -24,15 +24,18 @@ export default function Users() {
       
         { users.length === 0 && <p>Cargando...</p> }
         { <p>Total de Usuarios: {users.total} </p> }
+        <section className="flex">
         { 
           users.data?.map( (user, i) => {
             return (
-              <Link to={"/user/" + user.id}> 
-              <User { ...user} key={i}/>
+              <Link key={i} to={"/user/" + user.id}> 
+                <User { ...user} />
               </Link>
             )
           })
         }
+        </section>
+
       </>
     )
   }

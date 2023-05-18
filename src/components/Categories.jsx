@@ -17,15 +17,16 @@ export default function Categories() {
   return (
     <>
       <p>Estos son todos las categorias</p>
-      <p>estas son todas las categorias de usuarios</p>
-
-      {categories.data?.userCategories.map((category) => {
-        return <p>{category.category}</p>;
+      <p>Estas son todas las categorias de usuarios</p>
+      <p>Total de categorias de usuario: {categories.data?.userCategories.length}</p>
+      {categories.data?.userCategories.map((category, i) => {
+        return <p  key={i + category.category}>{category.category}</p>;
       })}
 
-      <p>estas son todas las categorias de productos</p>
-      {categories.data?.productCategories.map((category) => {
-        return <p>{category.category}</p>;
+      <p>Estas son todas las categorias de productos</p>
+      <p>Total de categorias de productos: {categories.data?.productCategories.length}</p>
+      {categories.data?.productCategories.map((category, i) => {
+        return <p key={i + category.category}>{category.category}</p>;
       })}
   
     </>

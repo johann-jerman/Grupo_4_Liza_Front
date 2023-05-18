@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import ProductDetail from "./ProductDetail"
+import { Link } from "react-router-dom"
+import '../style.css'
 
 const API = 'http://localhost:3004/api/product'
 
@@ -22,15 +25,16 @@ export default function Products() {
         <h3>Estos son todos los productos</h3>
         {products.length == 0 && <p>Cargando la chucha ...</p>}
         { <p>Total de Productos: {products.total} </p> }
-        
+        <section className="flex">
         {products.data?.map( (product, i) => {
             return (
-              <div key={product.name + i}>
-                <p>{product.name}</p>
-              </div>
+              <Link to={`/product/${product.id}`} key={product.id + i}>
+                <ProductDetail {...product}/>
+              </Link>
             )
           })
         }
+        </section>
       </>
     )
   }
