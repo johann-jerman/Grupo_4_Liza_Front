@@ -39,10 +39,9 @@ export default function TheLast() {
             <Link to={`/product/${product?.id}`}>
             <article className="box">
                 {/* <ProductDetail {...product}/> */}
-
-                <h3>{product?.name}</h3>
-                <p>Precio: {product?.price} - {product?.offer}% = {product?.price - product?.price * product?.offer / 100}</p>
-                <p>{product?.stock}</p>
+                <h3 className="title"> {product?.name}</h3>
+                <p className="title">Precio: {product?.price} - {product?.offer}% = {product?.price - product?.price * product?.offer / 100}</p>
+                <p className="title">Stock: {product?.stock}</p>
                 <img className="img" src={`http://localhost:3004/images/products/${product?.image[0].image}`} alt="Imagen de producto" />
             </article>
             </Link>
