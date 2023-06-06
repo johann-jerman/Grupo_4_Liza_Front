@@ -9,7 +9,7 @@ export default function Users() {
     useEffect( () => {
 
       userRequest(API)
-
+      
     }, [] )
     
     const userRequest = async (api) => {

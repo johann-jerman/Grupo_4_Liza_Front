@@ -16,18 +16,24 @@ export default function Categories() {
   };
   return (
     <>
-      <p>Estos son todos las categorias</p>
-      <p>Estas son todas las categorias de usuarios</p>
-      <p>Total de categorias de usuario: {categories.data?.userCategories.length}</p>
-      {categories.data?.userCategories.map((category, i) => {
-        return <p  key={i + category.category}>{category.category}</p>;
-      })}
+      <p className="text-center fsize-18">Estos son todos las categorias</p>
+      <div className="flex flex-center">
+        <div className="margin-t">
+          <p className="fsize-18">Estas son todas las categorias de usuarios</p>
+          <p className="fsize-18">Total de categorias de usuario: {categories.data?.userCategories.length}</p>
+          {categories.data?.userCategories.map((category, i) => {
+            return <p className="fsize-16"  key={i + category.category}>{category.category}</p>;
+          })}
+        </div>
 
-      <p>Estas son todas las categorias de productos</p>
-      <p>Total de categorias de productos: {categories.data?.productCategories.length}</p>
-      {categories.data?.productCategories.map((category, i) => {
-        return <p key={i + category.category}>{category.category}</p>;
-      })}
+        <div>
+          <p className="fsize-18">Estas son todas las categorias de productos</p>
+          <p className="fsize-18">Total de categorias de productos: {categories.data?.productCategories.length}</p>
+          {categories.data?.productCategories.map((category, i) => {
+            return <p className="fsize-16" key={i + category.category}>{category.category}</p>;
+          })}
+        </div>
+      </div>
   
     </>
   );
